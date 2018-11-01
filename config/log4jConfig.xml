@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender"> 
+		<param name="Target" value="System.out"/> 
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="[%d{ddMMM HH:mm:ss,SSS}] (%M@%L) %-5p %c{1} - %m%n"/> 
+		</layout> 
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="DEBUG" />
+		</filter>
+	</appender> 
+  
+	<appender name="file" class="org.apache.log4j.RollingFileAppender"> 
+		<param name="file" value="./log/MQTTconnector.log"/>
+		<param name="MaxFileSize" value="5MB"/>
+		<!-- Keep one backup file -->
+		<param name="MaxBackupIndex" value="100"/>
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="[%d{dd MMM yyyy HH:mm:ss,SSS}] (%M@%L) %-5p %c{1} - %m%n"/>
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="DEBUG" />
+		</filter> 
+	</appender> 
+  
+	<root>
+		<level value="DEBUG"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console" />
+	</root>
+	
+  	<!--logger name="com.abodata.clientsmq.SMQClient" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console" />
+	</logger>
+	
+  	<logger name="com.abodata.clientsmq.SMQUtils" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.abodata.clientsmq.SMQProducer" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console"/>
+	</logger>
+	  
+	<logger name="com.abodata.clientsmq.generic.GenericConfig" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console"/>
+	</logger>
+  
+	<logger name="com.abodata.clientsmq.generic.ConnectionManager" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="com.abodata.clientsmq.mqtt.MQTTConnectionManager" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console"/>
+	</logger>
+	<logger name="com.abodata.clientsmq.mqtt.MQTTDataGenerator" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console"/>
+	</logger>
+			
+	<logger name="com.abodata.clientsmq.generic.GenericManager" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="com.abodata.clientsmq.generic.DataGenerator" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="console"/>
+	</logger>
+	
+	<logger name="com.abodata.clientsmq.locateip.IPLocator" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="File_locate"/>
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="com.abodata.clientsmq.locateip.LocateIPConfig" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="File_locate"/>
+		<appender-ref ref="console"/>
+	</logger>
+	
+	<logger name="com.abodata.clientsmq.locateip.WebService" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="File_locate"/>
+		<appender-ref ref="console"/>
+	</logger>
+	
+	<logger name="com.abodata.clientsmq.locateip.IPReader" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="File_locate"/>
+		<appender-ref ref="console"/>
+	</logger>
+ 	
+	<logger name="com.abodata.clientsmq.locateip.LocateIPManager" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="File_locate"/>
+		<appender-ref ref="console"/>
+	</logger>
+	
+	<logger name="com.abodata.clientsmq.locateip.LicenseMap" additivity="false">
+		<level value="ERROR"/>
+		<appender-ref ref="File_locate"/>
+		<appender-ref ref="console"/>
+	</logger>
+	
+	<root>
+		<priority value="WARN" />
+		<appender-ref ref="File_locate"/>
+		<appender-ref ref="console"/>
+	</root-->
+</log4j:configuration>

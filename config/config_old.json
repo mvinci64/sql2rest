@@ -1,0 +1,161 @@
+{
+	"databases": [{
+		"name": "dbCCOLWeb",
+		"configFile": "config/dbcpPacketDB.properties"
+	}],
+	"broker":{
+		"polling": 10000,
+		"brokerIp": "tcp://127.0.0.1",
+		"brokerPort": 61618,
+		"brokerClient": "client",
+		"sendMeasureGap": 1
+	},
+	"sensors":[{
+		"deviceAltId": "00000P000008578247",
+		"sensorAltId":"100004"
+		}
+	],
+	"dataDispatch": [{
+		"id": "Trak_COM",
+		"tables": [
+			{
+				"database": "dbCCOLWeb",
+				"name": "dbo.V_2I_SAP_2018",
+				"queryPrefix": "TOP 300",
+				"querySuffix": " AND Cod_PuntoMisura ='00000P000008578247' ORDER BY DataSms",
+				"limit": "DataSms",
+				"afterQueryAction": "",
+				"columns": [
+					{
+						"name": "Cod_PuntoMisura",
+						"type": "string",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "CODPuntoMisura",
+						"format": ""
+					},
+					{
+						"name": "DataSms",
+						"type": "timestamp",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "DataSMS",
+						"format":"yyyy-MM-dd'T'HH:mm:ss.SSS"
+					}, 
+					{
+						"name": "ID_PuntoMisura",
+						"type": "int",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "IdPuntoMisura",
+						"format": ""
+					},
+					{
+						"name": "ID_Attributo",
+						"type": "int",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "IDAttributo",
+						"format": ""
+					},
+					{
+						"name": "NomeAttributo",
+						"type": "string",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "NomeAttributo",
+						"format": ""
+					},
+					{
+						"name": "UltimaLettura",
+						"type": "timestamp",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100003",
+						"sensorAlternateId": "",
+						"measureName": "UltimaLettura",
+						"format": ""
+					},
+					{
+						"name": "MAX1",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "MAX1",
+						"format": ""
+					},
+					{
+						"name": "MED1",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "MED1",
+						"format": ""
+					},
+					{
+						"name": "MIN1",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "MIN1",
+						"format": ""
+					},
+					{
+						"name": "SQM1",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "SQM1",
+						"format": ""
+					},
+					{
+						"name": "MAX2",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "MAX2",
+						"format": ""
+					},
+					{
+						"name": "MED2",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "MED2",
+						"format": ""
+					},
+					{
+						"name": "MIN2",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "MIN2",
+						"format": ""
+					},
+					{
+						"name": "SQM2",
+						"type": "double",
+						"deviceAlternateId": "",
+						"capabilityAlternateId": "100001",
+						"sensorAlternateId": "",
+						"measureName": "SQM2",
+						"format": ""
+					}
+				]
+			}
+		]
+	}
+		
+]
+}
